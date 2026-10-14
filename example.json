@@ -1,0 +1,36 @@
+{
+  "exports": {
+    ".": {
+      "node": {
+        "import": "./dist/index.mjs",
+        "require": "./dist/index.cjs"
+      },
+      "default": "./dist/browser.js"
+    },
+    "./features/*": "./dist/features/*.js",
+    "./features/private/*": null
+  },
+  "queries": [
+    {
+      "subpath": ".",
+      "conditions": [
+        "node",
+        "import"
+      ]
+    },
+    {
+      "subpath": ".",
+      "conditions": [
+        "node",
+        "require"
+      ]
+    },
+    {
+      "subpath": "./features/private/key",
+      "conditions": [
+        "node",
+        "import"
+      ]
+    }
+  ]
+}
